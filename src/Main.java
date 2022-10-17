@@ -1,5 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-
+        //Task-3
+    Car lada = new Car("Lada","Granta",1.7,"жёлтый",2015,"Россия");
+    Car audi = new Car("Audi", "A8 50L TDI quattro", 3.0, "черный", 2020, "Германия");
+    Car bmw = new Car("BMW","Z8",3.0,"чёрный",2021,"Германия");
+    Car kia = new Car("KIA","Sportage 4-го поколения",2.4,"красный",2018,"Южная Корея");
+    Car hyunday = new Car("Hyunday","Avante", 1.6,"оранжевый",2016,"Южная Корея");
+lada.characteristics();
+audi.characteristics();
+bmw.characteristics();
+kia.characteristics();
+hyunday.characteristics();
     }
 }
