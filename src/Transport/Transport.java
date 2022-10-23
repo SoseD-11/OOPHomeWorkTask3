@@ -36,9 +36,9 @@ public abstract class Transport {
         this.setMaxSpeed(maxSpeed);
     }
 
-    public abstract void refill(); // абстрактный метод заправки
+    public abstract void refill();
 
-    // ГЕТТЕРЫ СЕТТЕРЫ
+
     public String getBrand() {
         return brand;
     }

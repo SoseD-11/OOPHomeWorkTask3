@@ -39,6 +39,11 @@ public class Flying extends Birds {
     }
 
     @Override
+    public String toString() {
+        return super.toString() + "moveType = " + moveType + '.';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -51,9 +56,5 @@ public class Flying extends Birds {
     public int hashCode() {
         return Objects.hash(super.hashCode(), moveType);
     }
-
-    @Override
-    public String toString() {
-        return super.toString() + "moveType = " + moveType + '.';
-    }
 }
+

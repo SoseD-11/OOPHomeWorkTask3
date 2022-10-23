@@ -8,6 +8,9 @@ public class Predators extends Mammals {
     public Predators(String name, int yearsOld, String livingEnvironment, String speed) {
         super(name, yearsOld, livingEnvironment, speed);
     }
+    public String getTypeOfFood() {
+        return typeOfFood;
+    }
 
     public String hunts() {
         return "Подкрадываюсь и нападаю или загоняю добычу пока не устанет";
@@ -32,7 +35,10 @@ public class Predators extends Mammals {
     public String walk() {
         return   "Гуляю в своей среде обитания";
     }
-
+    @Override
+    public String toString() {
+        return super.toString() + "typeOfFood = " + typeOfFood +  '.';
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,12 +53,7 @@ public class Predators extends Mammals {
         return Objects.hash(super.hashCode(), typeOfFood);
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + "typeOfFood = " + typeOfFood +  '.';
-    }
 
-    public String getTypeOfFood() {
-        return typeOfFood;
-    }
+
+
 }
