@@ -2,8 +2,8 @@ package Animals;
 
 import java.util.Objects;
 
-public class Herbivores  extends Mammals{
-    private  final String typeOfFood = "Раститиельная пища";
+public class Herbivores  extends Mammals {
+    private final String typeOfFood = "Раститиельная пища";
 
     public Herbivores(String name, int yearsOld, String livingEnvironment, String speed) {
         super(name, yearsOld, livingEnvironment, speed);
@@ -11,6 +11,10 @@ public class Herbivores  extends Mammals{
 
     public String graze() {
         return "Пастись";
+    }
+
+    public String getTypeOfFood() {
+        return typeOfFood;
     }
 
     @Override
@@ -33,6 +37,10 @@ public class Herbivores  extends Mammals{
         return "Гуляю на лугах и полях ";
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + " Тип пищи: " + typeOfFood + '.';
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -47,13 +55,8 @@ public class Herbivores  extends Mammals{
     public int hashCode() {
         return Objects.hash(super.hashCode(), typeOfFood);
     }
-
-    @Override
-    public String toString() {
-        return super.toString() + " Тип пищи: " + typeOfFood + '.';
-    }
-
-    public String getTypeOfFood() {
-        return typeOfFood;
-    }
 }
+
+
+
+

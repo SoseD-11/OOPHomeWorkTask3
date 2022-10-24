@@ -10,7 +10,9 @@ abstract class Birds extends Animals {
         this.livingEnvironment = livingEnvironment;
     }
 
-
+    public String getLivingEnvironment() {
+        return livingEnvironment;
+    }
     public String hunts() {
         return "Пикирую к воде под прикрытием ночи, чтобы поймать рыбу на водно-болотных угодьях и лесных реках";
     }
@@ -29,6 +31,10 @@ abstract class Birds extends Animals {
     public String move() {
         return null;
     }
+    @Override
+    public String toString() {
+        return super.toString() + "Среда обитания " + livingEnvironment +  '.';
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -44,12 +50,7 @@ abstract class Birds extends Animals {
         return Objects.hash(super.hashCode(), livingEnvironment);
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + "Среда обитания " + livingEnvironment +  '.';
-    }
 
-    public String getLivingEnvironment() {
-        return livingEnvironment;
-    }
+
+
 }
