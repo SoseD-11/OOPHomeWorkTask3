@@ -1,3 +1,4 @@
+/*
 package Animals;
 
 import java.util.Objects;
@@ -61,3 +62,4 @@ abstract class Animals {
         return "Animals : " + "name = '" + name + "'" + ", yearsOld = " + yearsOld + '/';
     }
 }
+*/

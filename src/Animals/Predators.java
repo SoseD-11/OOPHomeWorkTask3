@@ -1,3 +1,4 @@
+/*
 package Animals;
 
 import java.util.Objects;
@@ -57,3 +58,4 @@ public class Predators extends Mammals {
 
 
 }
+*/

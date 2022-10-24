@@ -1,4 +1,4 @@
-package Animals;
+/*package Animals;
 
 import java.util.Objects;
 
@@ -41,4 +41,4 @@ abstract class Mammals extends Animals {
     public String toString() {
         return super.toString()+ "livingEnvironment = " + livingEnvironment +  ", speed=" + speed +  '.';
     }
-}
+}*/

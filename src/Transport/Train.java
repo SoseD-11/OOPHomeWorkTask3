@@ -1,3 +1,4 @@
+/*
 package Transport;
 
 public class Train extends Transport {
@@ -79,4 +80,4 @@ public class Train extends Transport {
         return "Train: " + " tripPrice = " + tripPrice + ", travelTimeMinutes = " + travelTimeMinutes +
                 ", departureStationName = " + departureStationName + ", endingStation = " + endingStation + ", amountWagons = " + amountWagons + '.';
     }
-}
+}*/

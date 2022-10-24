@@ -2,6 +2,7 @@ package Animals;
 
 import java.util.Objects;
 
+/*
 public class Flying extends Birds {
     private final String moveType;
 
@@ -9,7 +10,9 @@ public class Flying extends Birds {
         super(name, yearsOld, livingEnvironment);
         this.moveType = moveType;
     }
-
+    public String getMoveType() {
+        return moveType;
+    }
     public String flying() {
         return "Движениями своих крыльев создаю поток воздуха, который поднимает меня в воздух";
     }
@@ -34,9 +37,7 @@ public class Flying extends Birds {
         return super.move();
     }
 
-    public String getMoveType() {
-        return moveType;
-    }
+
 
     @Override
     public String toString() {
@@ -58,3 +59,4 @@ public class Flying extends Birds {
     }
 }
 
+*/

@@ -1,14 +1,51 @@
-import Transport.Car;
+/*import Transport.Car;
 import Transport.Train;
 import Transport.Bus;
-import Animals.*;
+import Animals.*;*/
 
+
+import Drivers.DriverBuses;
+import Drivers.DriverTrucks;
+import Transport.Buses;
+import Transport.Cars;
+import Drivers.DriverCars;
+import Transport.Trucks;
 
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("Задание-1");
-        Car lada = new Car(
+        Cars lada = new Cars("Lada", null/*"Granta"*/, -1.5f);
+        Cars audi = new Cars("Audi", "A8 50 l TDI quattro", 3.0f);
+        Cars bmw = new Cars("BMW", "Z9", 3.0f);
+        Cars kia = new Cars("Kia", "Sportage", 2.4f);
+
+        Trucks zil = new Trucks("ZIL", "Shishiga", 4.2f);
+        Trucks kraz = new Trucks("KRAZ", "255", 5.2f);
+        Trucks daf = new Trucks("DAF", "CF 65.220", 4.5f);
+        Trucks volvo = new Trucks("VOLVO", "FH 540", 5.0f);
+
+        Buses man = new Buses("MAN", "Lion's coach", 6.2f);
+        Buses iveco = new Buses("IVECO", "D-43",5.8f);
+        Buses van = new Buses("VAN","HOOL TX-16",7.1f);
+        Buses mercedes = new Buses("Mercedes-Benz","Integro 12-M",8.0f);
+
+        DriverCars mihail = new DriverCars("Mihail", 5, kia);
+        DriverTrucks aleksey = new DriverTrucks("Aleksey", 7, volvo);
+        DriverBuses konstantin = new DriverBuses("Konstantin", 9, mercedes);
+
+        System.out.println(mihail);
+        System.out.println(lada);
+        lada.startMoving();
+        bmw.endMoving();
+        man.pitStop();
+        lada.circleIndicators();
+        kraz.circleIndicators();
+        System.out.println(audi);
+        
+
+
+        /*Car lada = new Car(
                 null, "Granta", 0,
                 "", "желтый", 3.0f,
                 null, null, null,
@@ -204,7 +241,7 @@ public class Main {
         System.out.println("frog = " + frog.toString());
         System.out.println("gull = " + gull.toString());
         System.out.println("dodoBird = " + dodoBird.toString());
-        System.out.println("bear = " + bear.toString());
+        System.out.println("bear = " + bear.toString());*/
 
     }
 }

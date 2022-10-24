@@ -1,3 +1,4 @@
+/*
 package Animals;
 
 import java.util.Objects;
@@ -54,3 +55,4 @@ abstract class Birds extends Animals {
 
 
 }
+*/
