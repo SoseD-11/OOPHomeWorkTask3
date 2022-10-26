@@ -11,7 +11,7 @@ public class Trucks extends Transport implements Competing{
 
     @Override
     public double getBestLapTime() {
-        return ThreadLocalRandom.current().nextDouble(0.00,999.99);
+        return ThreadLocalRandom.current().nextDouble(1.00,9.99);
     }
 
     @Override
@@ -32,10 +32,23 @@ public class Trucks extends Transport implements Competing{
     public void pitStop() {
         System.out.println("Truck, " + getBrand() + " " + getModel() + ", went to the pit-stop!");
     }
-    @Override
+  /* @Override
     public void circleIndicators() {
         System.out.println("Truck, " + getBrand() + " " + getModel() +
                 ". Lap time - " + getBestLapTime() + ". Max speed - " + getMaxSpeed() + ".");
+    }*/
+  @Override
+  public String toString() {
+      return super.toString() + (". Lap time - " + getBestLapTime() + ". Max speed - " + getMaxSpeed() + ".");
+  }
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 
 

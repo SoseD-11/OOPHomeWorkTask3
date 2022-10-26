@@ -39,9 +39,11 @@ public class Main {
         lada.startMoving();
         bmw.endMoving();
         man.pitStop();
-        lada.circleIndicators();
-        kraz.circleIndicators();
+
+       String s = daf.toString();
+        System.out.println(s);
         System.out.println(audi);
+        
         
 
 

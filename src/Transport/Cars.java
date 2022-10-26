@@ -31,11 +31,30 @@ public class Cars extends Transport implements Competing{
     public void pitStop() {
         System.out.println("Car, " + getBrand() + " " + getModel() + ", went to the pit-stop!");
     }
+
     @Override
-    public void circleIndicators() {
-        System.out.println("Car, " + getBrand() + " " + getModel() +
-                        ". Lap time - " + getBestLapTime() + ". Max speed - " + getMaxSpeed() + ".");
+    public String toString() {
+        return super.toString() +  (". Lap time - " + getBestLapTime() + ". Max speed - " + getMaxSpeed() + ".");
     }
+
+    /* @Override
+    public void  circleIndicators() {
+        System.out.println("Car, " + getBrand() + " " + getModel() +
+                ". Lap time - " + getBestLapTime() + ". Max speed - " + getMaxSpeed() + ".");
+    }*/
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+
+
+
 
 }
 

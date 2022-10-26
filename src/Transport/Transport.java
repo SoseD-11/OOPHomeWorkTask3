@@ -48,7 +48,7 @@ public abstract class Transport {
 
     public abstract void endMoving();
 
-    public abstract void circleIndicators();
+    /*public abstract void circleIndicators();*/
 
     public String getBrand() {
         return brand;
@@ -117,6 +117,7 @@ public abstract class Transport {
                 ", engineVolume=" + engineVolume +
                 '}';
     }
+
 /*  public String toString() {
         return "Transport brand : " + brand + ", model : " + model +
                 ", engineVolume : " + engineVolume;*//* +
