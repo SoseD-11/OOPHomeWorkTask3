@@ -44,9 +44,6 @@ public abstract class Transport {
         this.setMaxSpeed(maxSpeed);
     }*/
 
-    public abstract void startMoving();
-
-    public abstract void endMoving();
 
     /*public abstract void circleIndicators();*/
 
@@ -61,6 +58,11 @@ public abstract class Transport {
     public float getEngineVolume() {
         return engineVolume;
     }
+    public abstract void startMoving();
+
+    public abstract void endMoving();
+
+    public abstract void printType();
 
 
 /* public int getProductionYears() {
@@ -95,7 +97,14 @@ public abstract class Transport {
         }
 
     }*/
-
+@Override
+public String toString() {
+    return "Transport{" +
+            "brand='" + brand + '\'' +
+            ", model='" + model + '\'' +
+            ", engineVolume=" + engineVolume +
+            '}';
+}
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -109,14 +118,7 @@ public abstract class Transport {
         return Objects.hash(brand, model, engineVolume);
     }
 
-    @Override
-    public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engineVolume=" + engineVolume +
-                '}';
-    }
+
 
 /*  public String toString() {
         return "Transport brand : " + brand + ", model : " + model +

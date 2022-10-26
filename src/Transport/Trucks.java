@@ -4,9 +4,18 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Trucks extends Transport implements Competing{
 
-
-    public Trucks(String brand, String model, float engineVolume) {
+private Weights weights;
+    public Trucks(String brand, String model, float engineVolume,Weights weights) {
         super(brand, model, engineVolume);
+        this.weights = weights;
+    }
+
+    public Weights getWeights() {
+        return weights;
+    }
+
+    public void setWeights(Weights weights) {
+        this.weights = weights;
     }
 
     @Override
@@ -37,6 +46,17 @@ public class Trucks extends Transport implements Competing{
         System.out.println("Truck, " + getBrand() + " " + getModel() +
                 ". Lap time - " + getBestLapTime() + ". Max speed - " + getMaxSpeed() + ".");
     }*/
+
+    @Override
+    public void printType() {
+        if (weights == null) {
+            System.out.println("Car data is not enough");
+        }else{
+            String from = weights.getFrom()==null?"":"from "+ weights.getFrom() + "t.";
+            String to = weights.getTo()==null?"":"to "+ weights.getTo() + "t.";
+            System.out.println("Truck capacity " + from + to);
+        }
+    }
   @Override
   public String toString() {
       return super.toString() + (". Lap time - " + getBestLapTime() + ". Max speed - " + getMaxSpeed() + ".");

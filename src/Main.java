@@ -6,29 +6,27 @@ import Animals.*;*/
 
 import Drivers.DriverBuses;
 import Drivers.DriverTrucks;
-import Transport.Buses;
-import Transport.Cars;
+import Transport.*;
 import Drivers.DriverCars;
-import Transport.Trucks;
 
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("Задание-1");
-        Cars lada = new Cars("Lada", null/*"Granta"*/, -1.5f);
-        Cars audi = new Cars("Audi", "A8 50 l TDI quattro", 3.0f);
-        Cars bmw = new Cars("BMW", "Z9", 3.0f);
-        Cars kia = new Cars("Kia", "Sportage", 2.4f);
+        Cars lada = new Cars("Lada", null/*"Granta"*/, -1.5f, BodyType.SEDAN);
+        Cars audi = new Cars("Audi", "A8 50 l TDI quattro", 3.0f,BodyType.COUPE);
+        Cars bmw = new Cars("BMW", "Z9", 3.0f,BodyType.COUPE);
+        Cars kia = new Cars("Kia", "Sportage", 2.4f,BodyType.CROSSOVER);
 
-        Trucks zil = new Trucks("ZIL", "Shishiga", 4.2f);
-        Trucks kraz = new Trucks("KRAZ", "255", 5.2f);
-        Trucks daf = new Trucks("DAF", "CF 65.220", 4.5f);
-        Trucks volvo = new Trucks("VOLVO", "FH 540", 5.0f);
+        Trucks zil = new Trucks("ZIL", "Shishiga", 4.2f, Weights.N1);
+        Trucks kraz = new Trucks("KRAZ", "255", 5.2f,Weights.N3);
+        Trucks daf = new Trucks("DAF", "CF 65.220", 4.5f,Weights.N2);
+        Trucks volvo = new Trucks("VOLVO", "FH 540", 5.0f,Weights.N2);
 
-        Buses man = new Buses("MAN", "Lion's coach", 6.2f);
-        Buses iveco = new Buses("IVECO", "D-43",5.8f);
-        Buses van = new Buses("VAN","HOOL TX-16",7.1f);
-        Buses mercedes = new Buses("Mercedes-Benz","Integro 12-M",8.0f);
+        Buses man = new Buses("MAN", "Lion's coach", 6.2f,Capacity.LARGE);
+        Buses iveco = new Buses("IVECO", "D-43",5.8f,Capacity.MEDIUM);
+        Buses van = new Buses("VAN","HOOL TX-16",7.1f,Capacity.EXTRA_LARGE);
+        Buses mercedes = new Buses("Mercedes-Benz","Integro 12-M",8.0f,Capacity.SMALL);
 
         DriverCars mihail = new DriverCars("Mihail", 5, kia);
         DriverTrucks aleksey = new DriverTrucks("Aleksey", 7, volvo);
@@ -43,6 +41,7 @@ public class Main {
        String s = daf.toString();
         System.out.println(s);
         System.out.println(audi);
+        kraz.printType();
         
         
 

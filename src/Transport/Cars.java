@@ -5,9 +5,20 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Cars extends Transport implements Competing{
 
-    public Cars(String brand, String model, float engineVolume) {
+private BodyType bodyType;
+    public Cars(String brand, String model, float engineVolume,BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
     }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
+
     @Override
     public double getBestLapTime() {
         return ThreadLocalRandom.current().nextDouble(1.01,9.99);
@@ -25,6 +36,15 @@ public class Cars extends Transport implements Competing{
     @Override
     public void endMoving() {
         System.out.println("Car, " + getBrand() + " " + getModel() + ", end moving!");
+    }
+
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Car data is not enough");
+        }else{
+            System.out.println("Car body type " + bodyType);
+        }
     }
 
     @Override
