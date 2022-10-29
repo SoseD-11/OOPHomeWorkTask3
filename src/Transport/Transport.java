@@ -64,7 +64,7 @@ public abstract class Transport {
 
     public abstract void printType();
 
-
+    public abstract void service();
 /* public int getProductionYears() {
         return productionYears;
     }

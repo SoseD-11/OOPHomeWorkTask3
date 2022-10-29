@@ -48,6 +48,13 @@ private BodyType bodyType;
     }
 
     @Override
+    public void service() {
+      if (ThreadLocalRandom.current().nextBoolean()){
+          throw new DiagnosticException("Машина "+getModel()+" "+getBrand()+" не прошла диагностику");
+      }
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("Car, " + getBrand() + " " + getModel() + ", went to the pit-stop!");
     }
