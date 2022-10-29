@@ -1,4 +1,6 @@
-package Transport;
+package Drivers;
+
+import Transport.Transport;
 
 public abstract class Driver <T extends Transport>{
     private final String fullName;
@@ -9,7 +11,11 @@ public abstract class Driver <T extends Transport>{
     protected Driver(String fullName, String category,
                      int drivingExperience, T car) {
         this.fullName = fullName;
-        this.category = category;
+        if (category == null) {
+            throw new IllegalArgumentException("Необходимо указать категорию прав!");
+        }else {
+            this.category = category;
+        }
         this.drivingExperience = drivingExperience;
         this.car = car;
     }

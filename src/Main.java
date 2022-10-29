@@ -42,6 +42,17 @@ public class Main {
         System.out.println(s);
         System.out.println(audi);
         kraz.printType();
+        try {
+            lada.service();
+        } catch (DiagnosticException e){
+            System.out.println("Транспортное средство не прошло диагностику");
+        }
+        try {
+            van.service();
+        } catch (DiagnosticException e){
+            System.out.println("Транспортное средство не прошло диагностику");
+        }
+
         
         
 
