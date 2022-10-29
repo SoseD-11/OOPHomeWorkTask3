@@ -1,3 +1,4 @@
+/*
 package Animals;
 
 import java.util.Objects;
@@ -8,13 +9,11 @@ public class Herbivores  extends Mammals {
     public Herbivores(String name, int yearsOld, String livingEnvironment, String speed) {
         super(name, yearsOld, livingEnvironment, speed);
     }
-
-    public String graze() {
-        return "Пастись";
-    }
-
     public String getTypeOfFood() {
         return typeOfFood;
+    }
+    public String graze() {
+        return "Пастись";
     }
 
     @Override
@@ -60,3 +59,4 @@ public class Herbivores  extends Mammals {
 
 
 
+*/

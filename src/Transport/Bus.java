@@ -1,3 +1,4 @@
+/*
 package Transport;
 
 public class Bus extends Transport {
@@ -21,4 +22,4 @@ public class Bus extends Transport {
     public void refill() {
         System.out.println("Можно заправлять бензином или дизелем на заправке");
     }
-}
+}*/

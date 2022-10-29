@@ -1,3 +1,4 @@
+/*
 package Animals;
 
 import java.util.Objects;
@@ -9,7 +10,9 @@ public class  Flightless extends Birds {
         super(name, yearsOld, livingEnvironment);
         this.moveType = moveType;
     }
-
+    public String getMoveType() {
+        return moveType;
+    }
     public String walk() {
         return "Гуляю в своей среде обитания";
     }
@@ -34,9 +37,7 @@ public class  Flightless extends Birds {
         return super.move();
     }
 
-    public String getMoveType() {
-        return moveType;
-    }
+
 
     @Override
     public String toString() {
@@ -58,5 +59,6 @@ public class  Flightless extends Birds {
         return Objects.hash(super.hashCode(), moveType);
     }
 }
+*/
 
 

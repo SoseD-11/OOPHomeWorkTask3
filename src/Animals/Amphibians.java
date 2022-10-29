@@ -1,3 +1,4 @@
+/*
 package Animals;
 
 import java.util.Objects;
@@ -52,4 +53,4 @@ public class Amphibians extends Animals{
     public String getLivingEnvironment() {
         return livingEnvironment;
     }
-}
+}*/
