@@ -59,12 +59,16 @@ private Weights weights;
     }
 
     @Override
-    public void service() {
+    public boolean service() {
         if (ThreadLocalRandom.current().nextBoolean()){
             throw new DiagnosticException("Грузовик "+getModel()+" "+getBrand()+" не прошла диагностику");
         }
+        return false;
     }
-
+    @Override
+    public void repair() {
+        System.out.println("Грузовик "+ getBrand() + getModel() + " починен");
+    }
     @Override
   public String toString() {
       return super.toString() + (". Lap time - " + getBestLapTime() + ". Max speed - " + getMaxSpeed() + ".");

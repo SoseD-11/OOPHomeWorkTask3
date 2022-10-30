@@ -2,6 +2,8 @@ package Drivers;
 
 import Transport.Transport;
 
+import java.util.Objects;
+
 public abstract class Driver <T extends Transport>{
     private final String fullName;
     private final String category;
@@ -46,8 +48,24 @@ public abstract class Driver <T extends Transport>{
 
     @Override
     public String toString() {
-        return String.format("The driver " + getFullName() +
-                " drives the car " + car.getBrand() + " " + car.getModel() +
-                " and will participate in the race");
+        return "Driver{" +
+                "fullName='" + fullName + '\'' +
+                ", category='" + category + '\'' +
+                ", drivingExperience=" + drivingExperience +
+                ", car=" + car +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return drivingExperience == driver.drivingExperience && Objects.equals(fullName, driver.fullName) && Objects.equals(category, driver.category) && Objects.equals(car, driver.car);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, category, drivingExperience, car);
     }
 }

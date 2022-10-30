@@ -1,18 +1,28 @@
 package Transport;
 
+import Drivers.Driver;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Transport {
     private final String brand;
     private final String model;
     private final float engineVolume;
+    private final List<Driver<?>> drivers = new ArrayList<>();
+    private final List<Mechanic<?>> mechanics = new ArrayList<>();
+    private final List<Sponsor> sponsors = new ArrayList<>();
    /* private final int productionYears;
     private final String productionCountry;
     private String color;
     private int maxSpeed;*/
 
 
-    public Transport(String brand, String model, float engineVolume/*, int productionYears, String productionCountry, String color, int maxSpeed*/) {
+    public Transport(String brand,
+                     String model,
+                     float engineVolume/*, int productionYears, String productionCountry, String color, int maxSpeed*/) {
 
         if (brand == null || brand.isBlank() || brand.isEmpty()) {
             this.brand = "default";
@@ -29,6 +39,7 @@ public abstract class Transport {
             } else {
                 this.engineVolume = engineVolume;
             }
+
     }
        /* if (productionYears <= 0) {
             this.productionYears = 2000;
@@ -58,14 +69,39 @@ public abstract class Transport {
     public float getEngineVolume() {
         return engineVolume;
     }
+
+    public List<Driver<?>> getDrivers() {
+        return drivers;
+    }
+
+    public List<Mechanic<?>> getMechanics() {
+        return mechanics;
+    }
+
+    public List<Sponsor> getSponsors() {
+        return sponsors;
+    }
+
+    public void addDriver(Driver<?>... drivers) {
+        this.drivers.addAll(Arrays.asList(drivers));
+    }
+    public void addMechanic(Mechanic<?>... mechanics) {
+        this.mechanics.addAll(Arrays.asList(mechanics));
+    }
+    public void addSponsor(Sponsor... sponsors) {
+        this.sponsors.addAll(Arrays.asList(sponsors));
+    }
     public abstract void startMoving();
 
     public abstract void endMoving();
 
     public abstract void printType();
 
-    public abstract void service();
-/* public int getProductionYears() {
+    public abstract boolean service();
+    public abstract void repair();
+
+
+    /* public int getProductionYears() {
         return productionYears;
     }
 
@@ -117,6 +153,7 @@ public String toString() {
     public int hashCode() {
         return Objects.hash(brand, model, engineVolume);
     }
+
 
 
 
