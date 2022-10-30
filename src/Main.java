@@ -4,44 +4,93 @@ import Transport.Bus;
 import Animals.*;*/
 
 
+import Drivers.Driver;
 import Drivers.DriverBuses;
 import Drivers.DriverTrucks;
 import Transport.*;
 import Drivers.DriverCars;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("Задание-1");
+
+        Mechanic<Cars> petya = new Mechanic<Cars>("Petya", "Petrov","Pirelli");
+        Mechanic<Trucks> alesha = new Mechanic<Trucks>("Alesha", "Petrov","Pirelli");
+        Mechanic<Buses> grisha = new Mechanic<Buses>("Grisha", "Petrov","Pirelli");
+
+        Sponsor agusha = new Sponsor("Agusha", 1000);
+
         Cars lada = new Cars("Lada", null/*"Granta"*/, -1.5f, BodyType.SEDAN);
-        Cars audi = new Cars("Audi", "A8 50 l TDI quattro", 3.0f,BodyType.COUPE);
+        lada.addDriver(new DriverCars("Mihail", 5, lada));
+        lada.addMechanic(petya);
+        lada.addSponsor(agusha);
+
+       /* Cars audi = new Cars("Audi", "A8 50 l TDI quattro", 3.0f,BodyType.COUPE);
         Cars bmw = new Cars("BMW", "Z9", 3.0f,BodyType.COUPE);
         Cars kia = new Cars("Kia", "Sportage", 2.4f,BodyType.CROSSOVER);
-
+*/
         Trucks zil = new Trucks("ZIL", "Shishiga", 4.2f, Weights.N1);
-        Trucks kraz = new Trucks("KRAZ", "255", 5.2f,Weights.N3);
+        zil.addDriver(new DriverCars("Mihail", 5, lada));
+        zil.addMechanic(alesha);
+        zil.addSponsor(agusha);
+        /*Trucks kraz = new Trucks("KRAZ", "255", 5.2f,Weights.N3);
         Trucks daf = new Trucks("DAF", "CF 65.220", 4.5f,Weights.N2);
-        Trucks volvo = new Trucks("VOLVO", "FH 540", 5.0f,Weights.N2);
+        Trucks volvo = new Trucks("VOLVO", "FH 540", 5.0f,Weights.N2);*/
 
         Buses man = new Buses("MAN", "Lion's coach", 6.2f,Capacity.LARGE);
-        Buses iveco = new Buses("IVECO", "D-43",5.8f,Capacity.MEDIUM);
+        man.addDriver(new DriverCars("Mihail", 5, lada));
+        man.addMechanic(grisha);
+        man.addSponsor(agusha);
+       /* Buses iveco = new Buses("IVECO", "D-43",5.8f,Capacity.MEDIUM);
         Buses van = new Buses("VAN","HOOL TX-16",7.1f,Capacity.EXTRA_LARGE);
         Buses mercedes = new Buses("Mercedes-Benz","Integro 12-M",8.0f,Capacity.SMALL);
-
-        DriverCars mihail = new DriverCars("Mihail", 5, kia);
+*/
+       /* DriverCars mihail = new DriverCars("Mihail", 5, kia);
         DriverTrucks aleksey = new DriverTrucks("Aleksey", 7, volvo);
-        DriverBuses konstantin = new DriverBuses("Konstantin", 9, mercedes);
+        DriverBuses konstantin = new DriverBuses("Konstantin", 9, mercedes);*/
 
-        System.out.println(mihail);
+
+
+        List<Transport> transports
+                = List.of(lada,zil,man);
+
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.addCars(lada);
+        serviceStation.addTrucks(zil);
+        serviceStation.service();
+        serviceStation.service();
+
+
+        for (Transport transport : transports) {
+            printInfo(transport);
+        }
+
+
+
+       /* System.out.println(mihail);
         System.out.println(lada);
         lada.startMoving();
         bmw.endMoving();
-        man.pitStop();
+        man.pitStop();*/
 
-       String s = daf.toString();
+      /* String s = daf.toString();
         System.out.println(s);
         System.out.println(audi);
-        kraz.printType();
+        kraz.printType();*/
+       /* try {
+            lada.service();
+        } catch (DiagnosticException e){
+            System.out.println("Транспортное средство " + lada.getBrand() + " " + lada.getModel()+" не прошло диагностику");
+        }
+        try {
+            man.service();
+        } catch (DiagnosticException e){
+            System.out.println("Транспортное средство не прошло диагностику");
+        }
+*/
         
         
 
@@ -243,6 +292,17 @@ public class Main {
         System.out.println("gull = " + gull.toString());
         System.out.println("dodoBird = " + dodoBird.toString());
         System.out.println("bear = " + bear.toString());*/
+
+    }
+
+    public static void printInfo(Transport transport) {
+        System.out.println("Информация по автомобилю " + transport.getBrand()
+                + " "+ transport.getModel() );
+        System.out.println("Водители: " + transport.getDrivers());
+
+        System.out.println("Механики: " + transport.getMechanics());
+
+        System.out.println("Спонсоры: " + transport.getSponsors());
 
     }
 }

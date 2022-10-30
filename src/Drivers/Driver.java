@@ -1,4 +1,8 @@
-package Transport;
+package Drivers;
+
+import Transport.Transport;
+
+import java.util.Objects;
 
 public abstract class Driver <T extends Transport>{
     private final String fullName;
@@ -9,7 +13,11 @@ public abstract class Driver <T extends Transport>{
     protected Driver(String fullName, String category,
                      int drivingExperience, T car) {
         this.fullName = fullName;
-        this.category = category;
+        if (category == null) {
+            throw new IllegalArgumentException("Необходимо указать категорию прав!");
+        }else {
+            this.category = category;
+        }
         this.drivingExperience = drivingExperience;
         this.car = car;
     }
@@ -40,8 +48,24 @@ public abstract class Driver <T extends Transport>{
 
     @Override
     public String toString() {
-        return String.format("The driver " + getFullName() +
-                " drives the car " + car.getBrand() + " " + car.getModel() +
-                " and will participate in the race");
+        return "Driver{" +
+                "fullName='" + fullName + '\'' +
+                ", category='" + category + '\'' +
+                ", drivingExperience=" + drivingExperience +
+                ", car=" + car +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return drivingExperience == driver.drivingExperience && Objects.equals(fullName, driver.fullName) && Objects.equals(category, driver.category) && Objects.equals(car, driver.car);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, category, drivingExperience, car);
     }
 }

@@ -1,6 +1,5 @@
 package Drivers;
 
-import Transport.Driver;
 import Transport.Trucks;
 
 public class DriverTrucks extends Driver<Trucks> {

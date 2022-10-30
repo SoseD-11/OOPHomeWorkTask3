@@ -48,6 +48,19 @@ private BodyType bodyType;
     }
 
     @Override
+    public void repair() {
+        System.out.println("Машина "+ getBrand() + getModel() + " починена");
+    }
+
+    @Override
+    public boolean service() {
+      if (ThreadLocalRandom.current().nextBoolean()){
+          throw new DiagnosticException("Машина "+getModel()+" "+getBrand()+" не прошла диагностику");
+      }
+        return false;
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("Car, " + getBrand() + " " + getModel() + ", went to the pit-stop!");
     }

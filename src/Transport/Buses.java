@@ -54,6 +54,16 @@ private Capacity capacity;
            System.out.println("Bus capacity from " + capacity.getFrom() + " places, to" + capacity.getTo() + " places");
        }
    }
+
+    @Override
+    public boolean service() {
+        System.out.println("Автобус: " + getBrand() + ", " + getModel() + " в диагностике не нуждается");
+        return false;
+    }
+    @Override
+    public void repair() {
+        System.out.println("Автобус "+ getBrand() + getModel() + " починена");
+    }
     @Override
     public String toString() {
         return super.toString() + (". Lap time - " + getBestLapTime() + ". Max speed - " + getMaxSpeed() + ".");
